@@ -26,7 +26,7 @@ La aplicación sigue una arquitectura web estándar con las siguientes capas pri
     * `pandas`: Para la manipulación eficiente de datos y la agregación en la generación del reporte de fidelización.
     * `openpyxl`: Requerida por `pandas` para la escritura de archivos Excel en formato `.xlsx`.
     * `django-bootstrap5`: Facilita la integración de componentes y plantillas de Bootstrap 5 en Django.
-    * *(Opcional: Si decidiste mantener `django-crispy-forms` y `crispy-bootstrap5`)* `django-crispy-forms` y `crispy-bootstrap5`: Configuradas para el renderizado avanzado de formularios Django con estilos Bootstrap 5.
+  
 * **Control de Versiones:** Git y GitHub.
 
 ## 4. Estructura del Proyecto
