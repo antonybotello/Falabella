@@ -1,0 +1,44 @@
+{% extends "partials/base.html" %} 
+
+{% block title %}Mensaje del Reporte{% endblock title %}
+
+{% block contenido %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm" data-bs-theme="light"> {# Usamos tema claro para la card para legibilidad #}
+            <div class="card-header">
+                <h5 class="mb-0">Notificación del Reporte de Fidelización</h5>
+            </div>
+            <div class="card-body">
+                {% if tipo_mensaje == "error" %}
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">Error</h4>
+                        <p>{{ mensaje }}</p>
+                    </div>
+                {% elif tipo_mensaje == "info" %}
+                    <div class="alert alert-info" role="alert">
+                        <h4 class="alert-heading">Información</h4>
+                        <p>{{ mensaje }}</p>
+                    </div>
+                {% elif tipo_mensaje == "warning" %}
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Atención</h4>
+                        <p>{{ mensaje }}</p>
+                    </div>
+                {% else %}
+                    <div class="alert alert-secondary" role="alert">
+                        <p>{{ mensaje }}</p>
+                    </div>
+                {% endif %}
+                <hr>
+                <a href="{% url 'sac_app:pagina_consulta_cliente' %}" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle me-2" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                    </svg>
+                    Volver a la página de consulta
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

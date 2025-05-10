@@ -1,0 +1,31 @@
+{% load django_bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SAC App{% endblock title %}</title> 
+    
+    {% bootstrap_css %}
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    {% include 'partials/_header.html' %} 
+
+    <main class="container mt-4 mb-4">
+        {% block contenido %}
+        {% endblock contenido %}
+    </main>
+
+    {% include 'partials/_footer.html' %}
+
+    {% bootstrap_javascript %}
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+    
+    {% block page_specific_javascript %}
+    {% endblock page_specific_javascript %}
+</body>
+</html>
